@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 
 import {HeaderComponent} from '../header/header.component';
-import {HomeComponent} from '../../shared/components/home/home.component';
 import {RouterModule} from '@angular/router';
 import {ContentComponent} from '../content/content.component';
 import {MainRoutingModule} from './main.routes';
@@ -11,6 +10,8 @@ import {MakeUpComponent} from '../../shared/components/services/make-up/make-up.
 import {FooterComponent} from '../footer/footer.component';
 import {HairComponent} from '../../shared/components/services/hair/hair.component';
 import {NailComponent} from '../../shared/components/services/nail/nail.component';
+import {HomeModule} from '../../shared/components/home/home.module';
+import {ServicesModule} from '../../shared/components/services/services.module';
 
 @NgModule({
   entryComponents: [
@@ -18,20 +19,23 @@ import {NailComponent} from '../../shared/components/services/nail/nail.componen
   ],
   imports: [
     RouterModule,
-    MainRoutingModule
+    MainRoutingModule,
+    HomeModule,
+    ServicesModule
   ],
   declarations: [
     HeaderComponent,
     ContentComponent,
     FooterComponent,
     MainComponent,
-    HomeComponent,
     ContactsComponent,
-    HairComponent,
-    MakeUpComponent,
-    NailComponent
+    // HairComponent,
+    // MakeUpComponent,
+    // NailComponent
   ],
-  exports: [],
+  exports: [
+    MainComponent
+  ],
   providers: [
 
   ]

@@ -7,36 +7,42 @@ import {ContactsComponent} from '../../shared/components/contacts/contacts.compo
 import {MakeUpComponent} from '../../shared/components/services/make-up/make-up.component';
 import {HairComponent} from '../../shared/components/services/hair/hair.component';
 import {NailComponent} from '../../shared/components/services/nail/nail.component';
+import {ServicesComponent} from '../../shared/components/services/services.component';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
       {
         path: '',
-        component: MainComponent,
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'contacts',
+        component: ContactsComponent
+      },
+      {
+        path: 'services',
+        component: ServicesComponent,
         children: [
           {
-            path: 'home',
-            component: HomeComponent
-          },
-          {
-            path: 'contacts',
-            component: ContactsComponent
-          },
-          {
-            path: 'services/hair',
+            path: 'hair',
             component: HairComponent
           },
           {
-            path: 'services/make-up',
+            path: 'make-up',
             component: MakeUpComponent
           },
           {
-            path: 'services/nail',
+            path: 'nail',
             component: NailComponent
           }
         ]
-      },
+      }
     ])
   ],
   exports: [RouterModule]
