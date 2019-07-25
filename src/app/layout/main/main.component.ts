@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -8,11 +9,11 @@ import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/co
 })
 export class MainComponent implements OnInit, OnDestroy {
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
-
+    this.router.navigate(['/home']);
   }
 
   ngOnDestroy() {
