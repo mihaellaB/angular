@@ -5,13 +5,11 @@ import {RouterModule} from '@angular/router';
 import {ContentComponent} from '../content/content.component';
 import {MainRoutingModule} from './main.routes';
 import {MainComponent} from './main.component';
-import {ContactsComponent} from '../../shared/components/contacts/contacts.component';
-import {MakeUpComponent} from '../../shared/components/services/make-up/make-up.component';
 import {FooterComponent} from '../footer/footer.component';
-import {HairComponent} from '../../shared/components/services/hair/hair.component';
-import {NailComponent} from '../../shared/components/services/nail/nail.component';
-import {HomeModule} from '../../shared/components/home/home.module';
-import {ServicesModule} from '../../shared/components/services/services.module';
+import {HomeModule} from '../../components/home/home.module';
+import {ServicesModule} from '../../components/services/services.module';
+import {AdminModule} from '../../components/admin/admin.module';
+import {ContactsModule} from '../../components/contacts/contacts.module';
 
 @NgModule({
   entryComponents: [
@@ -21,17 +19,15 @@ import {ServicesModule} from '../../shared/components/services/services.module';
     RouterModule,
     MainRoutingModule,
     HomeModule,
-    ServicesModule
+    ServicesModule,
+    ContactsModule,
+    AdminModule
   ],
   declarations: [
     HeaderComponent,
     ContentComponent,
     FooterComponent,
     MainComponent,
-    ContactsComponent,
-    // HairComponent,
-    // MakeUpComponent,
-    // NailComponent
   ],
   exports: [
     MainComponent

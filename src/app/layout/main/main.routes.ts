@@ -1,13 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {MainComponent} from './main.component';
-import {HomeComponent} from '../../shared/components/home/home.component';
-import {ContactsComponent} from '../../shared/components/contacts/contacts.component';
-import {MakeUpComponent} from '../../shared/components/services/make-up/make-up.component';
-import {HairComponent} from '../../shared/components/services/hair/hair.component';
-import {NailComponent} from '../../shared/components/services/nail/nail.component';
-import {ServicesComponent} from '../../shared/components/services/services.component';
+import {HomeComponent} from '../../components/home/home.component';
+import {ContactsComponent} from '../../components/contacts/contacts.component';
+import {ServicesComponent} from '../../components/services/services.component';
+import {HairComponent} from '../../components/services/hair/hair.component';
+import {MakeUpComponent} from '../../components/services/make-up/make-up.component';
+import {NailComponent} from '../../components/services/nail/nail.component';
+import {AdminComponent} from '../../components/admin/admin.component';
+
 
 @NgModule({
   imports: [
@@ -42,7 +43,11 @@ import {ServicesComponent} from '../../shared/components/services/services.compo
             component: NailComponent
           }
         ]
-      }
+      },
+      {
+        path: 'admin',
+        component: AdminComponent
+      },
     ])
   ],
   exports: [RouterModule]

@@ -1,0 +1,13 @@
+<form [formGroup]="form"
+      class="form widgets-form ui-corner-all">
+<div class="content">
+  <p-card styleClass="ui-card-shadow stylistSchedule">
+    <p-header style="text-align:center">
+      <h1>Schedule the next meeting with your hair stylist</h1>
+    </p-header>
+
+  <app-stylist-schedule formGroupName="stylistSchedule"
+                 [dateFormat]='dateFormat'></app-stylist-schedule>
+  </p-card>
+</div>
+</form>

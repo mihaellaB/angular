@@ -6,11 +6,19 @@ import {HairComponent} from './hair/hair.component';
 import {MakeUpComponent} from './make-up/make-up.component';
 import {NailComponent} from './nail/nail.component';
 import {RouterModule} from '@angular/router';
+import {StylistScheduleModule} from '../../shared/components/stylist-schedule/stylist-schedule.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HairVm} from './hair/hair.vm';
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    StylistScheduleModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CardModule
   ],
   declarations: [
     ServicesComponent,
@@ -21,7 +29,9 @@ import {RouterModule} from '@angular/router';
   exports: [
     ServicesComponent
   ],
-  providers: []
+  providers: [
+    HairVm
+  ]
 })
 export class ServicesModule {
 }
